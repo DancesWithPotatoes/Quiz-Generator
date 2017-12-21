@@ -1,0 +1,14 @@
+//////////////////////////////////////////////////
+// Author/s:			Chris Murphy
+// Date created:		21/12/17
+// Date last edited:	21/12/17
+//////////////////////////////////////////////////
+#pragma once
+
+namespace quiz_generator
+{
+	class quiz_question
+	{
+
+	};
+}
