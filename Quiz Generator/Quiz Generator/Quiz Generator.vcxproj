@@ -115,10 +115,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source Files\Main.cpp" />
+    <ClInclude Include="Header Files\quiz_question.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header Files\quiz_question.h" />
+    <ClCompile Include="Source Files\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
