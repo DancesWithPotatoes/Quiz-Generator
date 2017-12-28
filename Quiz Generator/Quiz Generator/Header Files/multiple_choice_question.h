@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////
 // Author/s:			Chris Murphy
 // Date created:		21/12/17
-// Date last edited:	27/12/17
+// Date last edited:	28/12/17
 //////////////////////////////////////////////////
 #pragma once
 #include <algorithm>
@@ -20,6 +20,8 @@ namespace quiz_generator
 		// The standard constructor for the multiple_choice_question class.
 		multiple_choice_question(string pQuestion, string pCorrectAnswer, vector<string> pIncorrectAnswers);
 		
+		//bool write_to_file();
+
 		// Uses the console to ask the user to answer the question and returns whether or not they get it correct.
 		bool ask();
 

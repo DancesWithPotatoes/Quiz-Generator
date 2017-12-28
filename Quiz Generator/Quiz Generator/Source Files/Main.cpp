@@ -9,6 +9,18 @@
 using namespace quiz_generator;
 using namespace std;
 
+vector<multiple_choice_question> read_questions_from_file(string pFilePath)
+{
+
+
+}
+
+bool write_questions_to_file(string pFilePath, vector<multiple_choice_question> pQuestions)
+{
+
+	return false;
+}
+
 // The entry point of the program.
 int main()
 {
