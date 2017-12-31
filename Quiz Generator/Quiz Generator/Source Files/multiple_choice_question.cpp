@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////
 // Author/s:			Chris Murphy
 // Date created:		27/12/17
-// Date last edited:	27/12/17
+// Date last edited:	31/12/17
 //////////////////////////////////////////////////
 #include "multiple_choice_question.h"
 using namespace std;
@@ -9,6 +9,22 @@ using namespace std;
 namespace quiz_generator
 {
 	multiple_choice_question::multiple_choice_question(string pQuestion, string pCorrectAnswer, vector<string> pIncorrectAnswers) : mQuestion(pQuestion), mCorrectAnswer(pCorrectAnswer), mIncorrectAnswers(pIncorrectAnswers) { }
+
+	bool multiple_choice_question::write_to_open_text_file(ofstream& pOpenFileStream)
+	{
+		if (pOpenFileStream.is_open())
+		{
+			pOpenFileStream << mQuestion << '\n';
+			pOpenFileStream << mCorrectAnswer << '\n';
+			for (unsigned int i = 0; i < mIncorrectAnswers.size(); ++i)
+				pOpenFileStream << mIncorrectAnswers[i] << '\n';
+			pOpenFileStream << '\n';
+
+			return true;
+		}
+		else
+			return false;
+	}
 
 	bool multiple_choice_question::ask()
 	{
@@ -33,7 +49,7 @@ namespace quiz_generator
 			getline(cin, input);
 
 			stringstream sStream(input);
-			if (sStream >> inputtedAnswerIndex && inputtedAnswerIndex > 0 && inputtedAnswerIndex <= answers.size())
+			if (sStream >> inputtedAnswerIndex && inputtedAnswerIndex > 0 && inputtedAnswerIndex <= (int)answers.size())
 				break;
 			else
 				cout << "Invalid input." << endl;
